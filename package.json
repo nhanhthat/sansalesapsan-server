@@ -5,7 +5,7 @@
     "mongoose": "^7.5.2"
   },
   "engines": {
-    "node": "14.x"
+    "node": "18.x"
   }
 
 }
