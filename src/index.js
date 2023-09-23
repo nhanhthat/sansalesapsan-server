@@ -22,18 +22,30 @@ const LinkSchema = new mongoose.Schema({
 
 const Link = mongoose.model('Link', LinkSchema);
 
-// Endpoint POST để ghi dữ liệu vào MongoDB
+let productIdCounter = 1; // Biến đếm ID sản phẩm
+
 app.post('/api/live_x', (req, res) => {
   const content = req.body.content;
 
   const newLink = new Link({ content: content });
-  newLink.save()
+  let success = false; // Biến để theo dõi trạng thái thành công
+
+  newLink
+    .save()
     .then(() => {
-      res.status(200).json({ message: 'success' });
+      success = true; // Đánh dấu thành công
     })
     .catch((err) => {
       console.error(err);
       res.status(500).json({ message: 'Lỗi trong quá trình lưu dữ liệu' });
+    })
+    .finally(() => {
+      if (success) {
+        // Tăng biến đếm ID sản phẩm
+        productIdCounter++;
+
+        res.status(200).json({ message: 'success', productIdCounter });
+      }
     });
 });
 
