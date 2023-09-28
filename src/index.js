@@ -22,7 +22,7 @@ const LinkSchema = new mongoose.Schema({
 
 const Link = mongoose.model('Link', LinkSchema);
 
-let productIdCounter = 10; // Biến đếm ID sản phẩm
+let productIdCounter = 9; // Biến đếm ID sản phẩm
 
 
 
