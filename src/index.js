@@ -22,8 +22,8 @@ const LinkSchema = new mongoose.Schema({
 
 const Link = mongoose.model('Link', LinkSchema);
 
-// let productIdCounter = 9; // Biến đếm ID sản phẩm
-let productIdCounter = 11; // Biến đếm ID sản phẩm
+let productIdCounter = 9; // Biến đếm ID sản phẩm
+// let productIdCounter = 11; // Biến đếm ID sản phẩm
 
 
 
@@ -56,4 +56,4 @@ app.listen(3000, () => {
   console.log('Server đang lắng nghe trên cổng 3000');
 });
 
-// 2809
+// 2909
