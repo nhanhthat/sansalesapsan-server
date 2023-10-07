@@ -25,7 +25,7 @@ const Link = mongoose.model('Link', LinkSchema);
 
 
 
-let productIdCounter = 9; // Biến đếm ID sản phẩm x
+// let productIdCounter = 9; // Biến đếm ID sản phẩm x
 
 
 
@@ -48,9 +48,11 @@ app.post('/api/live_x', (req, res) => {
     .finally(() => {
       if (success) {
         // Tăng biến đếm ID sản phẩm
-        productIdCounter++;
+        // productIdCounter++;
 
-        res.status(200).json({ message: 'success', productIdCounter });
+        // res.status(200).json({ message: 'success', productIdCounter });
+        res.status(200).json({ message: 'success'});
+
       }
     });
 });
